@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What does a nilpotent operator determine? — Shuai Zong</title>
+  <meta name="description" content="Recovering a graded SL2 representation from a nilpotent operator, and the geometry of its canonical degeneration.">
+  <meta name="author" content="Shuai Zong">
+  
+  
+  <link rel="canonical" href="https://shuai-zong.github.io/notes/sl2-monodromy.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Shuai Zong">
+  <meta property="og:title" content="What does a nilpotent operator determine? — Shuai Zong">
+  <meta property="og:description" content="Recovering a graded SL2 representation from a nilpotent operator, and the geometry of its canonical degeneration.">
+  <meta property="og:url" content="https://shuai-zong.github.io/notes/sl2-monodromy.html">
+  <meta property="og:image" content="https://shuai-zong.github.io/assets/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Blue ice at Jökulsárlón, Iceland. Photograph by Adam Jang.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What does a nilpotent operator determine? — Shuai Zong">
+  <meta name="twitter:description" content="Recovering a graded SL2 representation from a nilpotent operator, and the geometry of its canonical degeneration.">
+  <meta name="twitter:image" content="https://shuai-zong.github.io/assets/social-card.jpg">
+  <meta name="twitter:image:alt" content="Blue ice at Jökulsárlón, Iceland. Photograph by Adam Jang.">
+  
+  
+  <meta name="theme-color" content="#00685b">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="stylesheet" href="/assets/fonts/lato.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preload" href="/assets/js/hero.js" as="script">
+  <script src="/assets/js/mathjax-config.js"></script><script defer src="/assets/vendor/mathjax/tex-chtml.js"></script>
+  <noscript><style>.menu-button{display:none}</style></noscript>
+</head>
+<body class="page-notes page-article">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="site-bar">
+      <a class="site-name" href="/">Shuai Zong</a>
+      <nav class="desktop-nav" aria-label="Primary"><a href="/">Home</a><a href="/research.html">Research</a><a href="/notes.html" aria-current="page">Notes</a><a href="/seminar.html">Seminar</a></nav>
+      <button class="menu-button" data-menu-open aria-label="Open navigation" aria-controls="mobile-menu" aria-expanded="false"><span aria-hidden="true"></span></button>
+    </div>
+    <noscript><nav class="no-script-nav" aria-label="Mobile navigation"><a href="/">Home</a><a href="/research.html">Research</a><a href="/notes.html" aria-current="page">Notes</a><a href="/seminar.html">Seminar</a></nav></noscript>
+    
+    
+    
+    
+    <div class="hero" data-page="notes">
+    <picture data-hero-picture>
+      <source data-hero-source="mobile" media="(max-width:820px)">
+      <source data-hero-source="tablet" media="(max-width:1024px)">
+      <img class="hero-photo" data-hero-photo alt="" aria-hidden="true" width="3840" height="599">
+    </picture>
+    <noscript><picture>
+      <source media="(max-width:820px)" srcset="/assets/images/natural-ice-cave-hero-article-mobile-480.webp 480w, /assets/images/natural-ice-cave-hero-article-mobile-820.webp 820w, /assets/images/natural-ice-cave-hero-article-mobile-1280.webp 1280w, /assets/images/natural-ice-cave-hero-article-mobile-1640.webp 1640w" sizes="100vw">
+      <source media="(max-width:1024px)" srcset="/assets/images/natural-ice-cave-hero-article-tablet-1024.webp 1024w, /assets/images/natural-ice-cave-hero-article-tablet-2048.webp 2048w" sizes="100vw">
+      <img class="hero-photo" data-photo-id="natural-ice-cave" alt="" aria-hidden="true" width="3840" height="599"
+      src="/assets/images/natural-ice-cave-hero-article-desktop-3840.webp"
+      srcset="/assets/images/natural-ice-cave-hero-article-desktop-1280.webp 1280w, /assets/images/natural-ice-cave-hero-article-desktop-1920.webp 1920w, /assets/images/natural-ice-cave-hero-article-desktop-2560.webp 2560w, /assets/images/natural-ice-cave-hero-article-desktop-3840.webp 3840w" sizes="100vw"
+      style="--focal-desktop:50% 44%;--focal-tablet:50% 44%;--focal-mobile:0% 45%"
+      fetchpriority="high" decoding="async">
+    </picture></noscript>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-title-wrap"><p class="hero-title">Notes</p></div>
+    <a class="photo-credit" data-photo-credit href="/credits.html#natural-ice-cave" title="sergejf / CC BY-SA 2.0; resized to WebP and cropped for display" aria-label="Image credit: sergejf / CC BY-SA 2.0; resized to WebP and cropped for display">Image</a>
+    <script type="application/json" id="hero-settings">{"stableMinutes":1440,"storageKey":"homepage-shared-photo-v2","fallbackImage":"natural-ice-cave"}</script>
+    <script type="application/json" id="hero-image-data">[{"id":"jokulsarlon-ice-cave","credit":"Adam Jang / Wikimedia Commons (CC0 1.0)","focal":{"desktop":"50% 48%","tablet":"54% 48%","mobile":"58% 50%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 48%","sources":[{"width":1280,"height":387,"src":"assets/images/jokulsarlon-ice-cave-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/jokulsarlon-ice-cave-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/jokulsarlon-ice-cave-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/jokulsarlon-ice-cave-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"54% 48%","sources":[{"width":1024,"height":387,"src":"assets/images/jokulsarlon-ice-cave-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/jokulsarlon-ice-cave-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":1093,"focal":"58% 50%","sources":[{"width":480,"height":320,"src":"assets/images/jokulsarlon-ice-cave-hero-home-mobile-480.webp"},{"width":820,"height":547,"src":"assets/images/jokulsarlon-ice-cave-hero-home-mobile-820.webp"},{"width":1280,"height":853,"src":"assets/images/jokulsarlon-ice-cave-hero-home-mobile-1280.webp"},{"width":1640,"height":1093,"src":"assets/images/jokulsarlon-ice-cave-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 48%","sources":[{"width":1280,"height":275,"src":"assets/images/jokulsarlon-ice-cave-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/jokulsarlon-ice-cave-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/jokulsarlon-ice-cave-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/jokulsarlon-ice-cave-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"54% 48%","sources":[{"width":1024,"height":274,"src":"assets/images/jokulsarlon-ice-cave-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/jokulsarlon-ice-cave-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":974,"focal":"58% 50%","sources":[{"width":480,"height":285,"src":"assets/images/jokulsarlon-ice-cave-hero-page-mobile-480.webp"},{"width":820,"height":487,"src":"assets/images/jokulsarlon-ice-cave-hero-page-mobile-820.webp"},{"width":1280,"height":760,"src":"assets/images/jokulsarlon-ice-cave-hero-page-mobile-1280.webp"},{"width":1640,"height":974,"src":"assets/images/jokulsarlon-ice-cave-hero-page-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 48%","sources":[{"width":1280,"height":200,"src":"assets/images/jokulsarlon-ice-cave-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/jokulsarlon-ice-cave-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/jokulsarlon-ice-cave-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/jokulsarlon-ice-cave-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"54% 48%","sources":[{"width":1024,"height":200,"src":"assets/images/jokulsarlon-ice-cave-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/jokulsarlon-ice-cave-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"58% 50%","sources":[{"width":480,"height":195,"src":"assets/images/jokulsarlon-ice-cave-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/jokulsarlon-ice-cave-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/jokulsarlon-ice-cave-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/jokulsarlon-ice-cave-hero-article-mobile-1640.webp"}]}}}}},{"id":"natural-ice-cave","credit":"sergejf / CC BY-SA 2.0; resized to WebP and cropped for display","focal":{"desktop":"50% 44%","tablet":"50% 44%","mobile":"0% 45%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 44%","sources":[{"width":1280,"height":387,"src":"assets/images/natural-ice-cave-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/natural-ice-cave-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/natural-ice-cave-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/natural-ice-cave-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 44%","sources":[{"width":1024,"height":387,"src":"assets/images/natural-ice-cave-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/natural-ice-cave-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":797,"focal":"0% 45%","sources":[{"width":480,"height":233,"src":"assets/images/natural-ice-cave-hero-home-mobile-480.webp"},{"width":820,"height":398,"src":"assets/images/natural-ice-cave-hero-home-mobile-820.webp"},{"width":1280,"height":622,"src":"assets/images/natural-ice-cave-hero-home-mobile-1280.webp"},{"width":1640,"height":797,"src":"assets/images/natural-ice-cave-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 44%","sources":[{"width":1280,"height":275,"src":"assets/images/natural-ice-cave-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/natural-ice-cave-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/natural-ice-cave-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/natural-ice-cave-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 44%","sources":[{"width":1024,"height":274,"src":"assets/images/natural-ice-cave-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/natural-ice-cave-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":797,"focal":"0% 45%","sources":[{"width":480,"height":233,"src":"assets/images/natural-ice-cave-hero-home-mobile-480.webp"},{"width":820,"height":398,"src":"assets/images/natural-ice-cave-hero-home-mobile-820.webp"},{"width":1280,"height":622,"src":"assets/images/natural-ice-cave-hero-home-mobile-1280.webp"},{"width":1640,"height":797,"src":"assets/images/natural-ice-cave-hero-home-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 44%","sources":[{"width":1280,"height":200,"src":"assets/images/natural-ice-cave-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/natural-ice-cave-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/natural-ice-cave-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/natural-ice-cave-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 44%","sources":[{"width":1024,"height":200,"src":"assets/images/natural-ice-cave-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/natural-ice-cave-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"0% 45%","sources":[{"width":480,"height":195,"src":"assets/images/natural-ice-cave-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/natural-ice-cave-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/natural-ice-cave-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/natural-ice-cave-hero-article-mobile-1640.webp"}]}}}}},{"id":"bled-winter-fog","credit":"Dreamy Pixel / CC BY 4.0; resized to WebP and cropped for display","focal":{"desktop":"58% 50%","tablet":"60% 50%","mobile":"65% 50%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"58% 50%","sources":[{"width":1280,"height":387,"src":"assets/images/bled-winter-fog-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/bled-winter-fog-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/bled-winter-fog-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/bled-winter-fog-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"60% 50%","sources":[{"width":1024,"height":387,"src":"assets/images/bled-winter-fog-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/bled-winter-fog-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":1032,"focal":"65% 50%","sources":[{"width":480,"height":302,"src":"assets/images/bled-winter-fog-hero-home-mobile-480.webp"},{"width":820,"height":516,"src":"assets/images/bled-winter-fog-hero-home-mobile-820.webp"},{"width":1280,"height":805,"src":"assets/images/bled-winter-fog-hero-home-mobile-1280.webp"},{"width":1640,"height":1032,"src":"assets/images/bled-winter-fog-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"58% 50%","sources":[{"width":1280,"height":275,"src":"assets/images/bled-winter-fog-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/bled-winter-fog-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/bled-winter-fog-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/bled-winter-fog-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"60% 50%","sources":[{"width":1024,"height":274,"src":"assets/images/bled-winter-fog-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/bled-winter-fog-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":974,"focal":"65% 50%","sources":[{"width":480,"height":285,"src":"assets/images/bled-winter-fog-hero-page-mobile-480.webp"},{"width":820,"height":487,"src":"assets/images/bled-winter-fog-hero-page-mobile-820.webp"},{"width":1280,"height":760,"src":"assets/images/bled-winter-fog-hero-page-mobile-1280.webp"},{"width":1640,"height":974,"src":"assets/images/bled-winter-fog-hero-page-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"58% 50%","sources":[{"width":1280,"height":200,"src":"assets/images/bled-winter-fog-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/bled-winter-fog-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/bled-winter-fog-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/bled-winter-fog-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"60% 50%","sources":[{"width":1024,"height":200,"src":"assets/images/bled-winter-fog-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/bled-winter-fog-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"65% 50%","sources":[{"width":480,"height":195,"src":"assets/images/bled-winter-fog-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/bled-winter-fog-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/bled-winter-fog-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/bled-winter-fog-hero-article-mobile-1640.webp"}]}}}}},{"id":"aurora-mountain","credit":"Anthony's astro / Wikimedia Commons (CC BY 4.0)","focal":{"desktop":"50% 48%","tablet":"50% 48%","mobile":"56% 48%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 48%","sources":[{"width":1280,"height":387,"src":"assets/images/aurora-mountain-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/aurora-mountain-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/aurora-mountain-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/aurora-mountain-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 48%","sources":[{"width":1024,"height":387,"src":"assets/images/aurora-mountain-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/aurora-mountain-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":948,"focal":"56% 48%","sources":[{"width":480,"height":278,"src":"assets/images/aurora-mountain-hero-home-mobile-480.webp"},{"width":820,"height":474,"src":"assets/images/aurora-mountain-hero-home-mobile-820.webp"},{"width":1280,"height":740,"src":"assets/images/aurora-mountain-hero-home-mobile-1280.webp"},{"width":1640,"height":948,"src":"assets/images/aurora-mountain-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 48%","sources":[{"width":1280,"height":275,"src":"assets/images/aurora-mountain-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/aurora-mountain-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/aurora-mountain-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/aurora-mountain-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 48%","sources":[{"width":1024,"height":274,"src":"assets/images/aurora-mountain-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/aurora-mountain-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":948,"focal":"56% 48%","sources":[{"width":480,"height":278,"src":"assets/images/aurora-mountain-hero-home-mobile-480.webp"},{"width":820,"height":474,"src":"assets/images/aurora-mountain-hero-home-mobile-820.webp"},{"width":1280,"height":740,"src":"assets/images/aurora-mountain-hero-home-mobile-1280.webp"},{"width":1640,"height":948,"src":"assets/images/aurora-mountain-hero-home-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 48%","sources":[{"width":1280,"height":200,"src":"assets/images/aurora-mountain-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/aurora-mountain-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/aurora-mountain-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/aurora-mountain-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 48%","sources":[{"width":1024,"height":200,"src":"assets/images/aurora-mountain-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/aurora-mountain-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"56% 48%","sources":[{"width":480,"height":195,"src":"assets/images/aurora-mountain-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/aurora-mountain-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/aurora-mountain-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/aurora-mountain-hero-article-mobile-1640.webp"}]}}}}},{"id":"ice-cave-blue-roof-kilby","credit":"Eric Kilby / CC BY-SA 2.0; resized to WebP and cropped for display","focal":{"desktop":"50% 45%","tablet":"50% 45%","mobile":"50% 50%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 45%","sources":[{"width":1280,"height":387,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 45%","sources":[{"width":1024,"height":387,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":1093,"focal":"50% 50%","sources":[{"width":480,"height":320,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-mobile-480.webp"},{"width":820,"height":547,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-mobile-820.webp"},{"width":1280,"height":853,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-mobile-1280.webp"},{"width":1640,"height":1093,"src":"assets/images/ice-cave-blue-roof-kilby-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 45%","sources":[{"width":1280,"height":275,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 45%","sources":[{"width":1024,"height":274,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":974,"focal":"50% 50%","sources":[{"width":480,"height":285,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-mobile-480.webp"},{"width":820,"height":487,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-mobile-820.webp"},{"width":1280,"height":760,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-mobile-1280.webp"},{"width":1640,"height":974,"src":"assets/images/ice-cave-blue-roof-kilby-hero-page-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 45%","sources":[{"width":1280,"height":200,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 45%","sources":[{"width":1024,"height":200,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"50% 50%","sources":[{"width":480,"height":195,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/ice-cave-blue-roof-kilby-hero-article-mobile-1640.webp"}]}}}}},{"id":"blue-ice-cave-kilby","credit":"Eric Kilby / CC BY-SA 2.0; resized to WebP and cropped for display","focal":{"desktop":"50% 45%","tablet":"50% 45%","mobile":"44% 50%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 45%","sources":[{"width":1280,"height":387,"src":"assets/images/blue-ice-cave-kilby-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/blue-ice-cave-kilby-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/blue-ice-cave-kilby-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/blue-ice-cave-kilby-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 45%","sources":[{"width":1024,"height":387,"src":"assets/images/blue-ice-cave-kilby-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/blue-ice-cave-kilby-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":1093,"focal":"44% 50%","sources":[{"width":480,"height":320,"src":"assets/images/blue-ice-cave-kilby-hero-home-mobile-480.webp"},{"width":820,"height":547,"src":"assets/images/blue-ice-cave-kilby-hero-home-mobile-820.webp"},{"width":1280,"height":853,"src":"assets/images/blue-ice-cave-kilby-hero-home-mobile-1280.webp"},{"width":1640,"height":1093,"src":"assets/images/blue-ice-cave-kilby-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 45%","sources":[{"width":1280,"height":275,"src":"assets/images/blue-ice-cave-kilby-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/blue-ice-cave-kilby-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/blue-ice-cave-kilby-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/blue-ice-cave-kilby-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 45%","sources":[{"width":1024,"height":274,"src":"assets/images/blue-ice-cave-kilby-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/blue-ice-cave-kilby-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":974,"focal":"44% 50%","sources":[{"width":480,"height":285,"src":"assets/images/blue-ice-cave-kilby-hero-page-mobile-480.webp"},{"width":820,"height":487,"src":"assets/images/blue-ice-cave-kilby-hero-page-mobile-820.webp"},{"width":1280,"height":760,"src":"assets/images/blue-ice-cave-kilby-hero-page-mobile-1280.webp"},{"width":1640,"height":974,"src":"assets/images/blue-ice-cave-kilby-hero-page-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 45%","sources":[{"width":1280,"height":200,"src":"assets/images/blue-ice-cave-kilby-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/blue-ice-cave-kilby-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/blue-ice-cave-kilby-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/blue-ice-cave-kilby-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 45%","sources":[{"width":1024,"height":200,"src":"assets/images/blue-ice-cave-kilby-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/blue-ice-cave-kilby-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"44% 50%","sources":[{"width":480,"height":195,"src":"assets/images/blue-ice-cave-kilby-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/blue-ice-cave-kilby-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/blue-ice-cave-kilby-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/blue-ice-cave-kilby-hero-article-mobile-1640.webp"}]}}}}},{"id":"matterhorn-stellisee-twilight-kuhn","credit":"Michael Kuhn / CC BY-SA 4.0; resized to WebP and cropped for display","focal":{"desktop":"50% 15%","tablet":"50% 18%","mobile":"42% 50%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 15%","sources":[{"width":1280,"height":387,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 18%","sources":[{"width":1024,"height":387,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":923,"focal":"42% 50%","sources":[{"width":480,"height":270,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-480.webp"},{"width":820,"height":461,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-820.webp"},{"width":1280,"height":720,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-1280.webp"},{"width":1640,"height":923,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 15%","sources":[{"width":1280,"height":275,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 18%","sources":[{"width":1024,"height":274,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":923,"focal":"42% 50%","sources":[{"width":480,"height":270,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-480.webp"},{"width":820,"height":461,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-820.webp"},{"width":1280,"height":720,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-1280.webp"},{"width":1640,"height":923,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-home-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 15%","sources":[{"width":1280,"height":200,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 18%","sources":[{"width":1024,"height":200,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"42% 50%","sources":[{"width":480,"height":195,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/matterhorn-stellisee-twilight-kuhn-hero-article-mobile-1640.webp"}]}}}}},{"id":"vangogh-rhone-night","credit":"Vincent van Gogh / Public domain (PD-Art); resized to WebP and cropped for display","focal":{"desktop":"50% 35%","tablet":"50% 35%","mobile":"50% 50%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 35%","sources":[{"width":1280,"height":387,"src":"assets/images/vangogh-rhone-night-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/vangogh-rhone-night-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/vangogh-rhone-night-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/vangogh-rhone-night-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 35%","sources":[{"width":1024,"height":387,"src":"assets/images/vangogh-rhone-night-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/vangogh-rhone-night-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":1230,"focal":"50% 50%","sources":[{"width":480,"height":360,"src":"assets/images/vangogh-rhone-night-hero-home-mobile-480.webp"},{"width":820,"height":615,"src":"assets/images/vangogh-rhone-night-hero-home-mobile-820.webp"},{"width":1280,"height":960,"src":"assets/images/vangogh-rhone-night-hero-home-mobile-1280.webp"},{"width":1640,"height":1230,"src":"assets/images/vangogh-rhone-night-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 35%","sources":[{"width":1280,"height":275,"src":"assets/images/vangogh-rhone-night-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/vangogh-rhone-night-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/vangogh-rhone-night-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/vangogh-rhone-night-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 35%","sources":[{"width":1024,"height":274,"src":"assets/images/vangogh-rhone-night-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/vangogh-rhone-night-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":974,"focal":"50% 50%","sources":[{"width":480,"height":285,"src":"assets/images/vangogh-rhone-night-hero-page-mobile-480.webp"},{"width":820,"height":487,"src":"assets/images/vangogh-rhone-night-hero-page-mobile-820.webp"},{"width":1280,"height":760,"src":"assets/images/vangogh-rhone-night-hero-page-mobile-1280.webp"},{"width":1640,"height":974,"src":"assets/images/vangogh-rhone-night-hero-page-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 35%","sources":[{"width":1280,"height":200,"src":"assets/images/vangogh-rhone-night-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/vangogh-rhone-night-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/vangogh-rhone-night-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/vangogh-rhone-night-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 35%","sources":[{"width":1024,"height":200,"src":"assets/images/vangogh-rhone-night-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/vangogh-rhone-night-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"50% 50%","sources":[{"width":480,"height":195,"src":"assets/images/vangogh-rhone-night-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/vangogh-rhone-night-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/vangogh-rhone-night-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/vangogh-rhone-night-hero-article-mobile-1640.webp"}]}}}}},{"id":"vangogh-starry-night","credit":"Vincent van Gogh / Public domain (PD-Art); resized to WebP and cropped for display","focal":{"desktop":"50% 30%","tablet":"50% 30%","mobile":"50% 32%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 30%","sources":[{"width":1280,"height":387,"src":"assets/images/vangogh-starry-night-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/vangogh-starry-night-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/vangogh-starry-night-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/vangogh-starry-night-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 30%","sources":[{"width":1024,"height":387,"src":"assets/images/vangogh-starry-night-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/vangogh-starry-night-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":1230,"focal":"50% 32%","sources":[{"width":480,"height":360,"src":"assets/images/vangogh-starry-night-hero-home-mobile-480.webp"},{"width":820,"height":615,"src":"assets/images/vangogh-starry-night-hero-home-mobile-820.webp"},{"width":1280,"height":960,"src":"assets/images/vangogh-starry-night-hero-home-mobile-1280.webp"},{"width":1640,"height":1230,"src":"assets/images/vangogh-starry-night-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 30%","sources":[{"width":1280,"height":275,"src":"assets/images/vangogh-starry-night-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/vangogh-starry-night-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/vangogh-starry-night-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/vangogh-starry-night-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 30%","sources":[{"width":1024,"height":274,"src":"assets/images/vangogh-starry-night-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/vangogh-starry-night-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":974,"focal":"50% 32%","sources":[{"width":480,"height":285,"src":"assets/images/vangogh-starry-night-hero-page-mobile-480.webp"},{"width":820,"height":487,"src":"assets/images/vangogh-starry-night-hero-page-mobile-820.webp"},{"width":1280,"height":760,"src":"assets/images/vangogh-starry-night-hero-page-mobile-1280.webp"},{"width":1640,"height":974,"src":"assets/images/vangogh-starry-night-hero-page-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 30%","sources":[{"width":1280,"height":200,"src":"assets/images/vangogh-starry-night-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/vangogh-starry-night-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/vangogh-starry-night-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/vangogh-starry-night-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 30%","sources":[{"width":1024,"height":200,"src":"assets/images/vangogh-starry-night-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/vangogh-starry-night-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"50% 32%","sources":[{"width":480,"height":195,"src":"assets/images/vangogh-starry-night-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/vangogh-starry-night-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/vangogh-starry-night-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/vangogh-starry-night-hero-article-mobile-1640.webp"}]}}}}},{"id":"monet-water-lilies-gothenburg","credit":"Claude Monet; Göteborgs konstmuseum (Gothenburg Museum of Art). Photo: Hossein Sehatlou / CC BY 4.0; resized to WebP and cropped for display","focal":{"desktop":"50% 30%","tablet":"50% 30%","mobile":"50% 35%"},"width":3840,"height":1161,"presentation":{"version":1,"variants":{"home":{"desktop":{"width":3840,"height":1161,"focal":"50% 30%","sources":[{"width":1280,"height":387,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-desktop-1280.webp"},{"width":1920,"height":581,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-desktop-1920.webp"},{"width":2560,"height":774,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-desktop-2560.webp"},{"width":3840,"height":1161,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-desktop-3840.webp"}]},"tablet":{"width":2048,"height":773,"focal":"50% 30%","sources":[{"width":1024,"height":387,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-tablet-1024.webp"},{"width":2048,"height":773,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-tablet-2048.webp"}]},"mobile":{"width":1640,"height":1230,"focal":"50% 35%","sources":[{"width":480,"height":360,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-mobile-480.webp"},{"width":820,"height":615,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-mobile-820.webp"},{"width":1280,"height":960,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-mobile-1280.webp"},{"width":1640,"height":1230,"src":"assets/images/monet-water-lilies-gothenburg-hero-home-mobile-1640.webp"}]}},"page":{"desktop":{"width":3840,"height":824,"focal":"50% 30%","sources":[{"width":1280,"height":275,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-desktop-1280.webp"},{"width":1920,"height":412,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-desktop-1920.webp"},{"width":2560,"height":549,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-desktop-2560.webp"},{"width":3840,"height":824,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-desktop-3840.webp"}]},"tablet":{"width":2048,"height":549,"focal":"50% 30%","sources":[{"width":1024,"height":274,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-tablet-1024.webp"},{"width":2048,"height":549,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-tablet-2048.webp"}]},"mobile":{"width":1640,"height":974,"focal":"50% 35%","sources":[{"width":480,"height":285,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-mobile-480.webp"},{"width":820,"height":487,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-mobile-820.webp"},{"width":1280,"height":760,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-mobile-1280.webp"},{"width":1640,"height":974,"src":"assets/images/monet-water-lilies-gothenburg-hero-page-mobile-1640.webp"}]}},"article":{"desktop":{"width":3840,"height":599,"focal":"50% 30%","sources":[{"width":1280,"height":200,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-desktop-1280.webp"},{"width":1920,"height":300,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-desktop-1920.webp"},{"width":2560,"height":400,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-desktop-2560.webp"},{"width":3840,"height":599,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-desktop-3840.webp"}]},"tablet":{"width":2048,"height":399,"focal":"50% 30%","sources":[{"width":1024,"height":200,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-tablet-1024.webp"},{"width":2048,"height":399,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-tablet-2048.webp"}]},"mobile":{"width":1640,"height":666,"focal":"50% 35%","sources":[{"width":480,"height":195,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-mobile-480.webp"},{"width":820,"height":333,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-mobile-820.webp"},{"width":1280,"height":520,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-mobile-1280.webp"},{"width":1640,"height":666,"src":"assets/images/monet-water-lilies-gothenburg-hero-article-mobile-1640.webp"}]}}}}}]</script>
+    <script src="/assets/js/hero.js"></script>
+    </div>
+    
+  </header>
+  <dialog class="mobile-drawer" id="mobile-menu" aria-label="Navigation">
+    <div class="drawer-bar"><a href="/">Shuai Zong</a><button class="drawer-close" data-menu-close aria-label="Close navigation"><span aria-hidden="true">×</span></button></div>
+    <nav aria-label="Mobile navigation"><a href="/">Home</a><a href="/research.html">Research</a><a href="/notes.html" aria-current="page">Notes</a><a href="/seminar.html">Seminar</a></nav>
+  </dialog>
+  <main id="main-content" tabindex="-1"><article class="math-article"><p class="back-link"><a href="/notes.html#fragments">← Fragments</a></p><header class="article-header"><h1>What does a nilpotent operator determine?</h1><p class="article-meta"><time datetime="2026-10-04">4 October 2026</time></p></header><div class="article-body"><p>Can one recover a Hodge structure, or an \(SL_2\)-representation, from a single nilpotent endomorphism \(N\colon M\to M\)?
+Completing \(N\) to an \(\mathfrak{sl}_2\)-triple is possible in characteristic zero, but the completion is not canonical.
+There is nevertheless a canonical construction: \(N\) determines a filtration \(W(N)\), and its associated graded carries a uniquely determined \(SL_2\)-action with lowering operator induced by \(N\).
+A Hodge structure requires further data; the construction here recovers this graded representation.</p>
+<p>We will realize the passage to this graded representation as a degeneration of equivariant vector bundles.
+The geometry comes from the inclusion \(\mathbb{G}_a\subset SL_2\): the operator defines a representation of the first group, while the special fiber carries a representation of the second.
+Restriction to the special fiber will describe semisimplification and the loss of extension data.</p>
+<p>Except where stated otherwise, \(k\) is a field of characteristic zero and the representations are finite-dimensional and rational.</p>
+<h2>1. The canonical graded representation</h2>
+<p>The monodromy filtration centered at zero is the unique finite, exhaustive, separated increasing filtration satisfying</p>
+<div class="math-display">\[
+  NW_rM\subseteq W_{r-2}M,
+  \qquad
+  N^r\colon\operatorname{gr}^W_rM\xrightarrow{\sim}\operatorname{gr}^W_{-r}M
+  \quad(r\geq0).
+\]</div>
+<p>For a Jordan block \(J_m=k[x]/(x^m)\), with \(N=x\), this is the filtration obtained by giving \(1,x,\ldots,x^{m-1}\) weights \(m-1,m-3,\ldots,1-m\).
+The associated graded is \(\operatorname{Sym}^{m-1}(k^2)\).
+For general \(M\), a basis-free formula is</p>
+<div class="math-display">\[
+  W_rM=\sum_{\substack{a,b\geq0\\a-b=r}}
+  \bigl(\ker N^{a+1}\cap\operatorname{im}N^b\bigr).
+\]</div>
+<p>In particular, every map commuting with the operators preserves these filtrations.
+On \(\operatorname{gr}^W M\), the grading and the induced lowering operator determine a unique raising operator; its formula is given in section 2.3.
+Thus the graded \(SL_2\)-representation is canonical and functorial.
+Transferring it to \(M\) requires an \(N\)-compatible splitting of \(W\).
+Such splittings exist, but for \(N\neq0\) they cannot be chosen naturally: every \(1+cN\) commutes with \(N\), whereas a grading operator satisfying \([H,N]=-2N\) has \([H,1+cN]=-2cN\).</p>
+<h2>2. Realizing the filtration as a family</h2>
+<h3>2.1. The punctured plane</h3>
+<p>To construct the family, first regard \(N\) as a group action.</p>
+<p>Since \(N\) is nilpotent, the exponential is a finite sum and satisfies</p>
+<div class="math-display">\[
+  \exp(aN)\exp(bN)=\exp((a+b)N).
+\]</div>
+<p>Thus \(N\) gives a representation of the additive group.
+Identify this group with the lower unipotent subgroup of \(G=SL_2\):</p>
+<div class="math-display">\[
+  U=\left\{u(a)=\begin{pmatrix}1&amp;0\\a&amp;1\end{pmatrix}\right\},
+  \qquad u(a)\cdot m=\exp(aN)m.
+\]</div>
+<p>A \(U\)-representation determines a \(G\)-equivariant vector bundle on \(G/U\), with that representation as its fiber at the identity coset.
+This turns the comparison of \(U\)- and \(G\)-representations into a question about equivariant bundles.</p>
+<p>The group \(SL_2\) acts transitively on the nonzero vectors of its standard plane, and a determinant-one matrix fixes \(e_2=(0,1)\) exactly when it belongs to \(U\).
+Consequently,</p>
+<div class="math-display">\[
+  G/U\xrightarrow{\sim}\mathbb{A}^2\setminus\{0\},
+  \qquad gU\longmapsto ge_2.
+\]</div>
+<p>The punctured plane parametrizes the cosets; \(M\) is the fiber and can have any dimension.
+The associated bundle is \(G\times^U M\), with projection \([g,m]\mapsto ge_2\) and relation \([gu,m]=[g,um]\).
+Its fiber at \(e_2\) is the original \((M,N)\).</p>
+<p>If the \(U\)-representation extends to a \(G\)-representation \(Q\), this bundle has the constant presentation \(\mathcal{O}\otimes Q\), with \(G\) acting on both the base and \(Q\).
+For a chosen identification \(M\simeq Q|_U\), the presentation sends \([g,m]\) to \((ge_2,gm)\).
+Choosing this presentation amounts to choosing an \(SL_2\)-completion.
+The canonical family will instead arise by extending the bundle towards the origin.</p>
+<h3>2.2. The blow-up and the Rees construction</h3>
+<p>To see a filtration in this geometry, consider approaching the origin along a line.
+A nonzero vector has stabilizer \(U\), which records the operator.
+A line has a larger stabilizer: besides \(U\), it contains a torus that can record weights.
+For the line \(ke_2\), this stabilizer is</p>
+<div class="math-display">\[
+  B=T\ltimes U,\qquad
+  T=\{\operatorname{diag}(t,t^{-1})\},\qquad
+  tu(a)t^{-1}=u(t^{-2}a).
+\]</div>
+<p>We therefore keep the line when the vector reaches zero.
+The space of pairs \((v,\ell)\), with \(v\in\ell\subset k^2\), does precisely this: it is the blow-up of the origin.
+Away from zero, \(\ell=kv\) is forced; over zero, the possible lines form \(\mathbb{P}^1\).
+Thus</p>
+<div class="math-display">\[
+  \operatorname{Bl}_0\mathbb{A}^2
+  =\{(v,\ell)\in\mathbb{A}^2\times\mathbb{P}^1:v\in\ell\}
+  \simeq\operatorname{Tot}\mathcal{O}_{\mathbb{P}^1}(-1).
+\]</div>
+<p>The exceptional point \((0,ke_2)\) has stabilizer \(B\).
+The limiting fiber can therefore carry both a unipotent action and the torus grading needed to record weights.</p>
+<p>Write \(\mathscr{X}=[\operatorname{Bl}_0\mathbb{A}^2/G]\).
+Here a bundle on \([Z/G]\) means a \(G\)-equivariant bundle on \(Z\), and a bundle on \(BH=[\operatorname{Spec}k/H]\) means an \(H\)-representation.
+The stabilizers just computed give the diagram</p>
+<div class="math-display">\[
+  \begin{array}{ccccc}
+  BB&amp;\xrightarrow{\ i\ }&amp;\mathscr{X}&amp;\xleftarrow{\ j\ }&amp;BU\\
+  {\scriptstyle p}\downarrow&amp;&amp;\downarrow&amp;&amp;\Vert\\
+  BG&amp;\hookrightarrow&amp;[\mathbb{A}^2/G]&amp;\hookleftarrow&amp;BU.
+  \end{array}
+\]</div>
+<p>The bottom row uses the origin, whose stabilizer is all of \(G\); the top row uses the exceptional directions, whose stabilizer is \(B\).
+The map \(p\colon BB\to BG\) forgets the direction, so \(p^*\) is restriction of a representation from \(G\) to \(B\).</p>
+<p>It suffices to work along the direction \(ke_2\).
+Write \(L=ke_2\), with coordinate \(z\), and use the slice \(z\mapsto(ze_2,ke_2)\).
+Its translates give</p>
+<div class="math-display">\[
+  G\times^B L\simeq\operatorname{Bl}_0\mathbb{A}^2,
+  \qquad \mathscr{X}\simeq[L/B].
+\]</div>
+<p>The torus acts on the slice by \(z\mapsto t^{-1}z\), while \(U\) acts trivially.
+We have reduced the construction to a family on a line: at \(z=1\) its fiber is a \(U\)-representation, and at \(z=0\) it is a \(B\)-representation.</p>
+<h4>A Rees calculation</h4>
+<p>For example, take \(M=ku\oplus kv\), with \(Nv=u\) and \(Nu=0\).
+Over \(z\neq0\), transport the fiber at \(1\) using \(\tau_z=\operatorname{diag}(z^{-1},z)\).
+Since</p>
+<div class="math-display">\[
+  \tau_z e_2=ze_2,\qquad
+  \tau_z^{-1}u(a)\tau_z=u(z^{-2}a),
+\]</div>
+<p>the transported operator is \(z^{-2}N\).
+In the fixed basis \(u,v\), it sends \(v\) to \(z^{-2}u\), which has a pole.
+Declare instead that the regular basis of the extending bundle is</p>
+<div class="math-display">\[
+  e_u=z^{-1}u,\qquad e_v=zv.
+\]</div>
+<p>Then \(z^{-2}N(e_v)=e_u\), so the operator extends regularly to zero.
+The negative power in \(e_u\) describes this basis relative to the old trivialization on the punctured line; the new bundle has regular sections \(k[z]e_u\oplus k[z]e_v\).
+At \(z=1\) we get \(u,v\); at \(z=0\), their new basis classes have weights \(-1,1\) and give the two pieces \(\ker N\) and \(M/\ker N\) of the associated graded.</p>
+<p>Changing the old lift to \(v+cu\) changes its regular section to</p>
+<div class="math-display">\[
+  z(v+cu)=e_v+cz^2e_u.
+\]</div>
+<p>It changes neither the module of regular sections nor the special-fiber classes.</p>
+<h4>Compatible filtrations</h4>
+<p>For a general \((M,N)\), the same transport gives \(z^{-2}N\).
+We must choose which Laurent-polynomial sections are to be regular at zero.
+A filtration records exactly these powers of \(z\).</p>
+<p>For a finite, exhaustive, separated increasing filtration \(W\) on \(M\), take</p>
+<div class="math-display">\[
+  \mathcal{R}_W(M)=\sum_{r\in\mathbb{Z}}W_rM\,z^r
+  \subset M[z,z^{-1}].
+\]</div>
+<p>The coordinate function \(z\) has \(T\)-weight \(+1\); give \(M\) weight zero in the Laurent trivialization, so \(mz^r\) has weight \(r\).
+An adapted basis with filtration indices \(r_1,\ldots,r_d\) gives a \(k[z]\)-basis \(z^{r_1}v_1,\ldots,z^{r_d}v_d\), proving that \(\mathcal{R}_W(M)\) defines a vector bundle.
+The operator</p>
+<div class="math-display">\[
+  \widetilde{N}(mz^r)=(Nm)z^{r-2}
+\]</div>
+<p>preserves this lattice exactly when \(NW_rM\subseteq W_{r-2}M\).
+Under this condition, \(\exp(a\widetilde{N})\) gives a regular \(U\)-action; together with the grading it makes the Rees bundle \(B\)-equivariant.</p>
+<p>Conversely, the regular sections of any such extension form a graded lattice in \(M[z,z^{-1}]\).
+Recover its filtration by \(W_rM=\{m:mz^r\text{ is a regular section}\}\).
+Regularity of \(z^{-2}N\) gives precisely the same compatibility condition.
+Thus extending the bundle from \(BU\) to \(\mathscr{X}\) is equivalent to choosing a compatible filtration, and bundle morphisms correspond to filtration-preserving maps commuting with \(N\).</p>
+<p>The fibers of this family explain what the extension remembers:</p>
+<div class="math-display">\[
+  \begin{aligned}
+  z=1:\quad &amp;\mathcal{R}_W(M)/(z-1)\simeq M,
+  &amp;&amp;\widetilde{N}|_1=N,\\
+  z=0:\quad &amp;\mathcal{R}_W(M)/z\mathcal{R}_W(M)
+       \simeq\bigoplus_r W_rM/W_{r-1}M,
+  &amp;&amp;\widetilde{N}|_0=\operatorname{gr}^W N.
+  \end{aligned}
+\]</div>
+<p>At \(z=1\) we recover the original nilpotent operator.
+At \(z=0\) we obtain its associated graded, with a torus weight \(r\) on \(W_rM/W_{r-1}M\) and an operator of degree \(-2\).
+The family is canonical once the filtration is specified; identifying its two fibers requires a choice of splitting.</p>
+<h3>2.3. The boundary condition selects the monodromy filtration</h3>
+<p>A compatible filtration gives a \(B\)-representation on the boundary, but we want the full Lefschetz \(SL_2\)-symmetry.
+Although the bundle on the blow-up is \(G\)-equivariant, a fixed boundary fiber is acted on only by its stabilizer \(B\): elements of \(G\) outside \(B\) move the boundary point.
+The additional condition is that this \(B\)-representation be the restriction of a \(G\)-representation.
+In terms of the map \(p\colon BB\to BG\) above, we require</p>
+<div class="math-display">\[
+  i^*\mathcal{E}\simeq p^*Q
+  \qquad\text{for some }Q\in\operatorname{Vect}(BG)
+  =\operatorname{Rep}(G).
+\]</div>
+<p>Equivalently, the bundle on the exceptional divisor \(\mathbb{P}^1\) must be \(G\)-equivariantly isomorphic to \(\mathcal{O}_{\mathbb{P}^1}\otimes Q\), where \(G\) acts diagonally on the base and on \(Q\).
+The condition concerns the boundary fiber; it does not choose an \(SL_2\)-action on \(M\).</p>
+<p>A \(B\)-representation is a graded space \(V = \bigoplus_r V_r\) with \(N \colon V_r \to V_{r-2}\).
+It extends to \(SL_2\) exactly when</p>
+<div class="math-display">\[
+  N^r \colon V_r \xrightarrow{\sim} V_{-r}
+  \qquad (r \geq 0).
+\]</div>
+<p>Indeed, this holds on every irreducible \(SL_2\)-representation.
+Conversely, these isomorphisms give the primitive decomposition</p>
+<div class="math-display">\[
+  P_r = \ker(N^{r+1} \colon V_r \to V_{-r-2}),
+  \qquad
+  V = \bigoplus_{r \geq 0}\ \bigoplus_{a=0}^{r} N^aP_r.
+\]</div>
+<p>The unique raising operator is</p>
+<div class="math-display">\[
+  E(N^ap) = a(r-a+1)N^{a-1}p
+  \qquad (p \in P_r),
+\]</div>
+<p>with \(Ep = 0\).
+Together with \(H|_{V_r} = r\), it gives the standard \(\mathfrak{sl}_2\)-action on each string, hence an algebraic \(SL_2\)-action over \(k\).</p>
+<p>Applied to the boundary of a Rees bundle, this criterion says that its filtration must satisfy</p>
+<div class="math-display">\[
+  N^r\colon\operatorname{gr}^W_rM
+  \xrightarrow{\sim}\operatorname{gr}^W_{-r}M
+  \qquad(r\geq0).
+\]</div>
+<p>Together with \(NW_rM\subseteq W_{r-2}M\), these are exactly the defining conditions for the monodromy filtration centered at zero.
+Consequently, among all extensions of \((M,N)\) across the exceptional divisor, the boundary condition selects precisely \(\mathcal{R}_{W(N)}(M)\).</p>
+<p>Let \(\operatorname{Vect}^{\mathrm{Lef}}(\mathscr{X})\) be the full subcategory of vector bundles whose restriction to \(BB\) is the restriction of an \(SL_2\)-representation.</p>
+<p><strong>Proposition.</strong> Restriction induces an equivalence of \(k\)-linear categories</p>
+<div class="math-display">\[
+  j^* \colon \operatorname{Vect}^{\mathrm{Lef}}(\mathscr{X})
+  \xrightarrow{\sim} \operatorname{Rep}(U).
+\]</div>
+<p>A quasi-inverse is \((M,N) \mapsto \mathcal{R}_{W(N)}(M)\).</p>
+<p><strong>Proof.</strong> By the Rees description, a bundle extending \((M,N)\) amounts to a compatible filtration \(W\).
+The boundary condition is precisely the Lefschetz condition on \(\operatorname{gr}^W M\), which characterizes \(W(N)\).
+Every map commuting with the nilpotent operators preserves their monodromy filtrations and therefore extends to a Rees morphism.
+The extension is unique because a map between vector bundles on \(L\) is determined on \(L^{\times}\).
+This proves essential surjectivity and full faithfulness. \(\square\)</p>
+<p>Restriction \(j^*\) preserves short exact sequences of vector bundles, but its quasi-inverse need not send a short exact sequence of representations to a short exact sequence of vector bundles.
+Section 4 computes this failure of exactness.</p>
+<h2>3. What is lost at the special fiber?</h2>
+<p>The special fiber retains the Jordan block lengths but kills certain morphisms.
+This gives a geometric description of semisimplification.</p>
+<h3>3.1. Semisimplification and tensor products</h3>
+<p>Restriction of the canonical extension to the boundary defines a functor</p>
+<div class="math-display">\[
+  \mathsf{S}\colon\operatorname{Rep}(U)\longrightarrow\operatorname{Rep}(SL_2),
+  \qquad (M,N)\longmapsto\operatorname{gr}^{W(N)}M.
+\]</div>
+<p>It is symmetric monoidal: tensoring two extensions preserves the boundary condition, so uniqueness identifies their tensor product with the canonical extension of the tensor product. In filtration language,</p>
+<div class="math-display">\[
+  W_r(M\otimes M')=\sum_{a+b=r}W_aM\otimes W_bM',
+  \qquad N_{M\otimes M'}=N\otimes1+1\otimes N'.
+\]</div>
+<p>We can see exactly what \(\mathsf{S}\) forgets by using Jordan blocks.
+It sends \(J_m\) to \(\operatorname{Sym}^{m-1}(k^2)\), kills every map between blocks of different sizes, and sends</p>
+<div class="math-display">\[
+  a_0+a_1N+\cdots+a_{m-1}N^{m-1}
+  \in\operatorname{End}_U(J_m)
+  \quad\longmapsto\quad a_0\operatorname{id}.
+\]</div>
+<p>These calculations show that \(\mathsf{S}\) is full and essentially surjective.
+Its kernel is the ideal of negligible morphisms: those \(f\colon M\to M'\) for which \(\operatorname{tr}(gf)=0\) for every \(g\colon M'\to M\).
+Indeed, between unequal indecomposable blocks every such composition is nilpotent; on \(J_m\), the trace pairing detects exactly the constant coefficient, since \(m\neq0\) in \(k\). Applying this blockwise gives</p>
+<div class="math-display">\[
+  \operatorname{Rep}(\mathbb{G}_a)/\{\text{negligible morphisms}\}
+  \simeq\operatorname{Rep}(SL_2).
+\]</div>
+<p>Thus the exceptional boundary realizes the semisimplification of \(\operatorname{Rep}(\mathbb{G}_a)\).
+The functor is not exact: it sends both maps in \(0\to J_1\to J_2\to J_1\to0\) to zero because their source and target weights differ.
+Likewise, \(\mathsf{S}(N)=0\) when \(N\) is viewed as a filtration-preserving endomorphism; the lowering operator on the boundary is its degree \(-2\) component instead.</p>
+<p>A concrete payoff is the Jordan form of a sum of commuting nilpotents on a tensor product. Clebsch--Gordan gives</p>
+<div class="math-display">\[
+  (J_m\otimes J_n,\ N\otimes1+1\otimes N)
+  \simeq\bigoplus_{a=0}^{\min(m,n)-1}J_{m+n-1-2a}.
+\]</div>
+<p>For example, \(J_2\otimes J_3\simeq J_4\oplus J_2\).
+The block lengths are determined without choosing a splitting of either monodromy filtration; the displayed direct-sum decomposition itself need not be canonical.
+The semisimplification result is classical; the point here is its realization by restriction to the exceptional boundary.</p>
+<h3>3.2. Vanishing along the exceptional divisor</h3>
+<p>We can measure what the boundary functor forgets.
+Let \(E\) be the exceptional divisor and \(\mathcal{E}_M\) the canonical extension of \(M\).
+For \(q\geq0\), the extension of an intertwiner \(f\colon M\to M'\) factors through \(\mathcal{E}_{M'}(-qE)\) exactly when</p>
+<div class="math-display">\[
+  f(W_rM)\subseteq W_{r-q}M'\qquad\text{for every }r.
+\]</div>
+<p>Indeed, on the slice, factoring through \(-qE\) means divisibility by \(z^q\) in the Rees lattice.
+The case \(q=1\) says that negligible morphisms are precisely the maps vanishing along \(E\).
+The lower bounds on vanishing order add under composition.</p>
+<p>For \(J_m\to J_n\), the usual basis consists of the maps sending \(1\) to \(x^b\), with \(\max(n-m,0)\leq b\leq n-1\).
+The source generator has weight \(m-1\), and its image has weight \(n-1-2b\).
+Their difference gives the vanishing orders</p>
+<div class="math-display">\[
+  |m-n|,\ |m-n|+2,\ \ldots,\ m+n-2.
+\]</div>
+<p>In particular, \(N^a\in\operatorname{End}(J_m)\) vanishes to order \(2a\) for \(0\leq a&lt;m\).
+For \(m&gt;1\), the identity on the Rees slice is</p>
+<div class="math-display">\[
+  \mathcal{R}(N)=z^2\widetilde{N}.
+\]</div>
+<p>Thus \(\mathsf{S}(N)=0\) is compatible with a nonzero lowering operator at the boundary: the latter is the leading term after removing the two powers of the normal parameter.</p>
+<h2>4. Why extensions behave differently</h2>
+<p>There are two related issues to separate: extending an individual bundle across the origin, and extending a short exact sequence as a short exact sequence.
+The first always works in this surface geometry; the second need not.</p>
+<h3>4.1. Extending bundles across the origin</h3>
+<p>The bundle on the punctured plane also extends uniquely across the origin itself.
+Unlike the Jordan-chain proof, the following argument works over any field.
+Let \(\pi\colon\mathscr{X}\to[\mathbb{A}^2/G]\) be the blow-down.
+Over any field, there are equivalences</p>
+<div class="math-display">\[
+  \operatorname{Vect}([\mathbb{A}^2/G])
+  \xrightarrow[\sim]{\ \pi^*\ }
+  \operatorname{Vect}^{\mathrm{Lef}}(\mathscr{X})
+  \xrightarrow[\sim]{\ j^*\ }
+  \operatorname{Rep}(U).
+\]</div>
+<p>Here the superscript \(\mathrm{Lef}\) still means that the boundary \(B\)-representation comes from \(G\); it is a condition on the group action, not just its differential.
+Both displayed functors preserve short exact sequences of vector bundles; the inverse extension functor from \(\operatorname{Rep}(U)\) need not do so.</p>
+<p>The proof uses two facts about this surface.
+First, a vector bundle on \(\mathbb{A}^2\setminus\{0\}\) has a unique reflexive extension across the origin, and a reflexive coherent sheaf on a regular surface is locally free.
+Morphisms extend uniquely as well.
+The \(G\)-equivariant structure extends by applying the same uniqueness to its action isomorphism on \(G\times\mathbb{A}^2\); the cocycle identity extends on \(G\times G\times\mathbb{A}^2\).
+Consequently, restriction identifies \(\operatorname{Vect}([\mathbb{A}^2/G])\) with \(\operatorname{Rep}(U)\), without a characteristic assumption.</p>
+<p>Second, a vector bundle on \(\operatorname{Bl}_0\mathbb{A}^2\) descends to \(\mathbb{A}^2\) precisely when it is trivial on the exceptional curve.
+Here is a way to see the nontrivial direction.
+Write \(E\simeq\mathbb{P}^1\) for that curve and \(I=\mathcal{O}(-E)\) for its ideal.
+If \(\mathcal{F}|_E\simeq\mathcal{O}_E^d\), then</p>
+<div class="math-display">\[
+  I^n/I^{n+1}\simeq\mathcal{O}_E(n),
+  \qquad H^1(E,\mathcal{O}_E(n))=0\quad(n\geq0).
+\]</div>
+<p>A basis on \(E\) therefore lifts successively to compatible bases on all its infinitesimal thickenings: the obstruction to lifting sections lies in the displayed \(H^1\), and a lifted basis remains a basis by Nakayama.
+Formal functions, together with \(\pi_*\mathcal{O}=\mathcal{O}\), now gives</p>
+<div class="math-display">\[
+  (\pi_*\mathcal{F})^{\wedge}_0
+  \simeq\widehat{\mathcal{O}}_{\mathbb{A}^2,0}^{\,d}.
+\]</div>
+<p>Faithful flatness of completion shows that \(\pi_*\mathcal{F}\) is locally free near the origin.
+The lifted bases identify the evaluation map on \(E\); hence \(\pi^*\pi_*\mathcal{F}\to\mathcal{F}\) is an isomorphism there and on its complement, so everywhere.
+Equivariance descends by the uniqueness of extension just used.</p>
+<p>Finally, for a \(G\)-equivariant bundle on \(E=G/B\), underlying triviality is exactly our boundary condition.
+If it is trivial, take \(Q=H^0(E,\mathcal{F}|_E)\); the evaluation map \(\mathcal{O}_E\otimes Q\to\mathcal{F}|_E\) is a \(G\)-equivariant isomorphism.
+This proves the claimed equivalences.
+In characteristic zero, the pullback of the reflexive extension must therefore be the monodromy Rees bundle already constructed.</p>
+<h3>4.2. Filtered complexes and the Rees defect</h3>
+<p>To keep track of a sequence that stops being exact, we pass from vector bundles to complexes.
+In this setting the associated graded is formed by a cofiber, so it retains the derived information at the special fiber.</p>
+<p>Write \(D(k)\) for the stable \(\infty\)-category of complexes of \(k\)-vector spaces.
+With our increasing-filtration convention, a filtered complex is an object of \(\operatorname{Fun}(\mathbb{Z},D(k))\), with transition maps \(F_{r-1}\to F_r\).
+Its underlying and graded objects are</p>
+<div class="math-display">\[
+  F_{\infty}=\operatorname*{colim}_r F_r,
+  \qquad \operatorname{gr}_r F=\operatorname{cofib}(F_{r-1}\to F_r).
+\]</div>
+<p>The Rees construction identifies this category, with its convolution tensor product, with \(D_{\mathrm{qc}}([\mathbb{A}^1/\mathbb{G}_m])\).
+For the corresponding graded \(k[z]\)-complex \(\mathcal{R}(F)\), with \(z\) in degree \(1\), the two restrictions are</p>
+<div class="math-display">\[
+  \mathcal{R}(F)\otimes^{\mathbf{L}}_{k[z]}k_{z=1}\simeq F_{\infty},
+  \qquad
+  \mathcal{R}(F)\otimes^{\mathbf{L}}_{k[z]}k_{z=0}
+  \simeq\bigoplus_r\operatorname{gr}_r F.
+\]</div>
+<p>At zero the grading is retained.
+For the finite filtrations of sections 1-2, the Rees module is free over \(k[z]\), so these derived fibers are the ordinary fibers already computed.
+The extra operator \(\widetilde{N}\) supplies the \(U\)-action needed to pass from this filtered model to the blow-up quotient.</p>
+<p>Both restriction functors above are exact in the stable sense.
+This does not make the assignment \((M,N)\mapsto W(N)\) exact.
+For the sequence \(J_1\to J_2\to J_1\), the Rees maps in the basis \(z^{-1}u,zv\) from section 2.2 are</p>
+<div class="math-display">\[
+  k[z]\longrightarrow k[z]^2\longrightarrow k[z],
+  \qquad 1\longmapsto(z,0),\qquad(a,b)\longmapsto zb.
+\]</div>
+<p>Forgetting the grading, this complex has \(k[z]/(z)\) as its cohomology at both the middle and the last term.
+It becomes exact after inverting \(z\), but it was never an exact triangle of filtered objects.</p>
+<h3>4.3. The Koszul complex of the origin</h3>
+<p>The same loss of exactness can be seen directly on the plane.
+The tautological vector at a point of \(k^2\) gives a complex that is exact away from the origin and has a cokernel at the origin.
+For the standard representation \(S=k^2\), the stack \([S/G]\) is the total space of the rank-two bundle on \(BG\) associated with \(S\).
+Write \(i_0\colon BG\hookrightarrow[S/G]\) for its zero section.
+The tautological vector \(s\) gives its Koszul resolution, with terms in degrees \(-2,-1,0\):</p>
+<div class="math-display">\[
+  i_{0*}\mathcal{O}_{BG}
+  \simeq
+  [\mathcal{O}\xrightarrow{\ s\ }S\otimes\mathcal{O}
+  \xrightarrow{\ s\wedge-\ }\mathcal{O}].
+\]</div>
+<p>Here the determinant form identifies \(\bigwedge^2S\) with \(k\).
+On the punctured plane, \(s\) never vanishes, so this complex is exact.
+Its fiber at \(e_2\) is the \(U\)-equivariant sequence</p>
+<div class="math-display">\[
+  0 \longrightarrow k \xrightarrow{\ 1\mapsto e_2\ } S
+  \xrightarrow{\ e_2\wedge-\ } k \longrightarrow 0.
+\]</div>
+<p>It is nonsplit: \(U\) fixes \(e_2\) and sends \(e_1\) to \(e_1+ae_2\), so the invariant line \(ke_2\) has no invariant complement.
+Thus the geometry of the missing origin produces the simplest nontrivial extension of nilpotent representations.
+In particular, \(\operatorname{Rep}(U)\) cannot be equivalent to the semisimple category \(\operatorname{Rep}(SL_2)\).
+The equivalence in section 2.3 uses bundles on the blow-up with a boundary condition.</p>
+<p>Tensoring with \(\operatorname{Sym}^n S\) and using Clebsch–Gordan gives</p>
+<div class="math-display">\[
+  0 \longrightarrow J_{n+1}
+  \longrightarrow J_{n+2} \oplus J_n
+  \longrightarrow J_{n+1} \longrightarrow 0
+  \qquad (n \geq 0),
+\]</div>
+<p>where \(J_0=0\).
+One explicit sequence with these terms is obtained from the maps</p>
+<div class="math-display">\[
+  J_m \longrightarrow J_{m+1} \oplus J_{m-1},
+  \qquad v \longmapsto (xv,\overline{v}),
+\]</div>
+<div class="math-display">\[
+  J_{m+1} \oplus J_{m-1} \longrightarrow J_m,
+  \qquad (a,b) \longmapsto \overline{a}-xb.
+\]</div>
+<p>Their exactness can be checked directly.
+In the Grothendieck group defined using short exact sequences of \(U\)-representations, this gives \(2[J_m] = [J_{m+1}] + [J_{m-1}]\).
+In fact every \(J_m\) has a filtration with \(m\) trivial quotients, so \(K_0(\operatorname{Rep}(U)) \simeq \mathbb{Z}\) via dimension.
+This numerical statement does not retain the extension data or the Lefschetz boundary condition.</p>
+<p>The same Koszul resolution gives a second calculation at the closed stratum.
+For a \(G\)-representation \(Q\), pulling the resolution of \(i_{0*}Q\) back to the zero section makes its differentials vanish, hence</p>
+<div class="math-display">\[
+  Li_0^*i_{0*}Q
+  \simeq Q\oplus(Q\otimes S)[1]\oplus Q[2].
+\]</div>
+<p>Its class is \((2-[S])[Q]\) in \(K_0(BG)\).
+The exact sequence on \(BU\) and this derived self-intersection on \(BG\) are two restrictions of the same Koszul complex.</p>
+<h3>4.4. The derived categories differ</h3>
+<p>Put \(Y=[\mathbb{A}^2/SL_2]\).
+The regular-surface argument in section 4.1 shows that restriction \(\operatorname{Vect}(Y)\to\operatorname{Vect}(BU)\) is an equivalence of ordinary categories.
+In characteristic zero, extensions of \(U\)-representations can be computed from</p>
+<div class="math-display">\[
+  R\Gamma(BU,M)\simeq[M\xrightarrow{\ N\ }M]
+  \qquad\text{in cohomological degrees }0,1.
+\]</div>
+<p>For two representations, apply this to \(\operatorname{Hom}_k(M,M')\), where the differential sends \(f\) to \(N'f-fN\).
+Thus ordinary intertwiners and their first extensions are the kernel and cokernel of the same operator.</p>
+<p>Taking \(M=k\) gives the contrast</p>
+<div class="math-display">\[
+  \operatorname{Ext}^1_Y(\mathcal{O},\mathcal{O})=0,
+  \qquad \operatorname{Ext}^1_{BU}(k,k)=k.
+\]</div>
+<p>The first equality follows because \(\mathbb{A}^2\) is affine and invariants under \(SL_2\) are exact; the second follows from \([k\xrightarrow{0}k]\).
+Consequently, \(\operatorname{Perf}(Y)\to\operatorname{Perf}(BU)\) is not fully faithful.
+The nonsplit sequence \(0\to k\to k^2\to k\to0\) extends across the origin as the tautological Koszul complex, whose cokernel there is \(i_{0*}\mathcal{O}_{BG}\).
+It therefore fails to extend as a short exact sequence of vector bundles.
+The missing origin is invisible to individual bundles and their ordinary morphisms, but remains visible to extensions and perfect complexes.</p>
+<h2>5. What changes in positive characteristic?</h2>
+<p>The extension theorem in section 4.1 still gives a canonical bundle and boundary representation over a field of characteristic \(p\).
+What changes is the input: a nilpotent differential no longer determines an action of \(\mathbb{G}_a\).
+We must keep the full group action.
+The following example will show that its higher powers of the group parameter can change the canonical weights.</p>
+<p>Over a field of characteristic \(p&gt;0\), a \(U\)-representation must instead be described by its full coaction</p>
+<div class="math-display">\[
+  \delta(m) = \sum_{n \geq 0} D_n(m) \otimes a^n,
+  \qquad D_0=1,
+  \qquad D_rD_s = \binom{r+s}{r}D_{r+s},
+\]</div>
+<p>with only finitely many nonzero terms.
+The same Rees construction works with \(D_nW_r \subseteq W_{r-2n}\), using \(\widetilde{D}_n(mz^r) = D_n(m)z^{r-2n}\).</p>
+<p>For example, \(a \mapsto \begin{pmatrix}1&amp;0\\a^p&amp;1\end{pmatrix}\) is nontrivial although its differential is zero.
+It is the restriction of the Frobenius twist of the standard \(SL_2\)-representation, whose weights are \(p\) and \(-p\).
+The classical condition involving powers of \(N=D_1\) therefore no longer characterizes extension to \(SL_2\).
+Replacing \(N^r\) by \(D_r\) does not suffice either: in characteristic three, \(\operatorname{Sym}^4(k^2)\) has</p>
+<div class="math-display">\[
+  D_2(e_1^3e_2) = \binom{3}{2}e_1e_2^3 = 0,
+\]</div>
+<p>although its weights \(2\) and \(-2\) are both one-dimensional.</p>
+<p>The extension theorem still supplies a unique compatible filtration satisfying the geometric boundary condition, with compatibility expressed using all the \(D_n\).
+The existence and uniqueness come from the surface geometry; an explicit description of this filtration in general would still be useful.
+This extension theorem is over a field; no corresponding assertion over an arbitrary base is made here.</p>
+<h3>A mixed Frobenius example</h3>
+<p>Take \(M=\langle u,v\rangle\) in characteristic \(p&gt;0\), with</p>
+<div class="math-display">\[
+  \rho(a)u=u,\qquad \rho(a)v=v+(a+a^p)u.
+\]</div>
+<p>The geometric filtration has \(u\) in weight \(-p\) and \(v\) in weight \(p\).
+In the Rees basis \(e_u=z^{-p}u\), \(e_v=z^pv\), the action is</p>
+<div class="math-display">\[
+  \rho_z(a)e_u=e_u,\qquad
+  \rho_z(a)e_v=e_v+(az^{2p-2}+a^p)e_u.
+\]</div>
+<p>At \(z=1\) we recover the original representation; at \(z=0\) only the Frobenius term remains.
+The boundary is the Frobenius twist of the standard \(SL_2\)-representation, so the preceding uniqueness result identifies this as the canonical filtration.</p>
+<p>The original representation does not even extend to \(B\) on the same two-dimensional space.
+Indeed, its unique \(U\)-fixed line is \(ku\).
+If a torus action existed, choose weight vectors \(u,v\) of weights \(\alpha,\beta\).
+The relation between \(T\) and \(U\) would force</p>
+<div class="math-display">\[
+  t^{\alpha-\beta}(a+a^p)
+  =t^{-2}a+t^{-2p}a^p.
+\]</div>
+<p>Comparing coefficients requires both \(\alpha-\beta=-2\) and \(\alpha-\beta=-2p\), which are distinct characters of the algebraic torus in every characteristic.
+Thus this example gives a \(G\)-equivariant bundle on \(\mathbb{A}^2\) that is not equivariantly a constant representation bundle, while its canonical boundary still carries a full \(G\)-representation.
+It also shows why the differential \(D_1\) cannot recover the geometric filtration: its ordinary monodromy weights would have been \(-1,1\).</p>
+<h2>6. Comparison with prismatic gauges</h2>
+<p>Bhatt's lectures on prismatic gauges give a mixed-characteristic version of the surface-purity argument in section 4: vector bundles extend across a missing point, but the resulting equivalence does not preserve all derived extension data.
+For a perfect field \(k\) of characteristic \(p\), put \(A=W(k)\).
+The gauge base is</p>
+<div class="math-display">\[
+  k^{\mathrm{Nyg}}
+  =\bigl[\operatorname{Spf}(A[u,t]/(ut-p)) / \mathbb{G}_m\bigr],
+  \qquad \deg u=1,\quad\deg t=-1,
+\]</div>
+<p>where \(\operatorname{Spf}\) denotes \(p\)-adic completion.
+A gauge is represented by a derived \(p\)-complete graded module: its components have maps \(u\colon M_i\to M_{i+1}\), \(t\colon M_{i+1}\to M_i\), with both composites equal to multiplication by \(p\).</p>
+<p>To see the surface analogy, work first with the algebraic quotient before completion.
+The opens \(u\neq0\) and \(t\neq0\) each have quotient \(\operatorname{Spec}A\), and their intersection has quotient \(\operatorname{Spec}A[1/p]\).
+Together they omit only the closed point \(u=t=0\) on the regular surface \(\operatorname{Spec}(A[u,t]/(ut-p))\).
+The purity argument therefore describes vector bundles by two finite free \(A\)-lattices \(M_u,M_t\), with an identification \(M_u[1/p]\simeq M_t[1/p]\); formal GAGA gives the same description on the gauge base.
+In these coordinates, a vector bundle \(F\)-gauge additionally specifies an \(A\)-linear isomorphism \(\varphi^*M_u\simeq M_t\), where \(\varphi\colon A\to A\) is the Witt-vector Frobenius.
+This is extra integral data, distinct from the identification after inverting \(p\).</p>
+<p>As in section 4.4, this ordinary equivalence does not give an equivalence of perfect-complex categories.
+Here is its simplest derived defect: the endomorphism complex of the trivial pair in the gluing category is</p>
+<div class="math-display">\[
+  \operatorname{fib}\bigl(A\oplus A
+  \xrightarrow{(a,b)\mapsto a-b}A[1/p]\bigr).
+\]</div>
+<p>Its \(H^0\) is \(A\), but its \(H^1\) is \(A[1/p]/A\); the original structure sheaf has no such \(H^1\).
+The \(a^p\) term in our representation example does not supply this Frobenius gluing.</p>
+<h2>Further reading</h2>
+<ul>
+<li>Deligne, <a href="https://www.numdam.org/item/PMIHES_1980__52__137_0/"><em>La conjecture de Weil II</em>, §1.6</a>, for the monodromy filtration.</li>
+<li>Asok, <a href="https://arxiv.org/abs/math/0604344"><em>Equivariant Vector Bundles on Certain Affine G-Varieties</em>, §3</a>, for the Rees correspondence; Asok--Parson, <a href="https://arxiv.org/abs/0908.3906"><em>Equivariant sheaves on some spherical varieties</em></a>, for the wider geometric setting.</li>
+<li>Etingof--Ostrik, <a href="https://arxiv.org/abs/1801.04409"><em>On semisimplification of tensor categories</em>, Example 3.5</a>, for the classical semisimplification of \(\operatorname{Rep}(\mathbb{G}_a)\).</li>
+<li>The Stacks Project on <a href="https://stacks.math.columbia.edu/tag/0EBJ">extension of reflexive sheaves</a>, <a href="https://stacks.math.columbia.edu/tag/0B3N">regular surfaces</a>, and <a href="https://stacks.math.columbia.edu/tag/02OC">formal functions</a>, for the geometric inputs in section 4.1.</li>
+<li>Bhatt, <a href="https://www.math.ias.edu/~bhatt/teaching/mat549f22/lectures.pdf"><em>Prismatic F-gauges</em>, §2.2, Proposition 3.4.12, Warning 3.4.13, and §4.1</a>, for filtered complexes, the surface-purity description of gauges, and Frobenius gluing.</li>
+</ul>
+</div></article>
+</main>
+  <footer><span>&copy; Shuai Zong</span><nav aria-label="Footer"><a href="/links.html">Links</a></nav></footer>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

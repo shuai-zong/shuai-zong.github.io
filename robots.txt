@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://shuai-zong.github.io/sitemap.xml
+
