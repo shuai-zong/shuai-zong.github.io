@@ -1,0 +1,31 @@
+name: One-shot homepage publication
+on:
+  push:
+    branches: [site]
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: site
+          persist-credentials: true
+      - name: Replace branch with verified artifact
+        env:
+          ARTIFACT_URL: 'https://sdmntprjapaneast.oaiusercontent.com/files/00000000-1b80-8209-ae16-6113445380ec/raw?se=2026-10-03T23%3A26%3A08Z&sp=r&sv=2026-02-06&sr=b&scid=22c80905-1b5e-56ae-8666-f781fdf432c4&skoid=b1bca990-dcac-4c31-8ca1-ac563cf24c54&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-03T22%3A02%3A20Z&ske=2026-10-04T22%3A02%3A20Z&sks=b&skv=2026-02-06&sig=HP/x7ECy%2BbKQPThEy%2Boa638ymdy5I1hE03p%2BbPpvl%2BE%3D'
+        run: |
+          set -euo pipefail
+          curl -fL "$ARTIFACT_URL" -o /tmp/homepage.zip
+          rm -rf /tmp/homepage-site
+          mkdir -p /tmp/homepage-site
+          unzip -q /tmp/homepage.zip -d /tmp/homepage-site
+          rsync -a --delete --exclude=.git /tmp/homepage-site/ ./
+          git status --short
+          git config user.name 'homepage-build'
+          git config user.email 'homepage-build@users.noreply.github.com'
+          git add --all
+          git commit -m "Publish homepage from 109312ba02e3a2c1319e91777a5adc3e8dc1e9b4"
+          git push origin HEAD:site
